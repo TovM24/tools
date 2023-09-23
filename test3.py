@@ -17,4 +17,4 @@
 #     app.run()
 
 
-print("Xin chao");
+print("Xin chao toi la trung");
