@@ -1,5 +1,6 @@
 import psutil
 
+# Nhận biết tình duyệt hiện tại đang được chạy trên máy
 def get_running_browser():
     for process in psutil.process_iter(attrs=['pid', 'name', 'exe']):
         try:

@@ -2,6 +2,7 @@ import random
 import datetime
 import twitter
 import facebook
+import ig
 
 def main(): 
     # Random
@@ -16,6 +17,8 @@ def main():
             twitter.nested_loop_Twitter_fallow()
         elif ranNum == 2:
             facebook.nested_loop_Fb_fallow()
+        elif ranNum == 3:
+            ig.nested_loop_Insta_fallow()
       
       
 if __name__ == "__main__":

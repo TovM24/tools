@@ -16,12 +16,17 @@ def nested_loop_Insta_fallow():
     pg.typewrite("https://wwww.like4like.org/user/earn-instagram-follow.php")
     pg.press('enter')
     pg.moveTo(1090, 500)
+    
+    
+    # Random thời gian sleep
     time_ranInt = random.randint(2, 4)
     time.sleep(time_ranInt)
     while True:
         if keyboard.is_pressed('ctrl') and keyboard.is_pressed('c'):  # if key 'esc' is pressed 
             print("Exiting the program...")
             break  # finishing the loop
+        
+        # Random thời gian sleep
         time_ranInt = random.randint(2, 5)
         time.sleep(time_ranInt)
         start_time = time.time()
@@ -65,8 +70,12 @@ def nested_loop_Insta_fallow():
         start_time = time.time()  
         time.sleep(4)    
         while True:
+            
+                # Random thời gian sleep
                 time_ranInt = random.randint(6, 9)
                 time.sleep(time_ranInt)
+                
+                
                 button1_template = cv2.imread('igFl.jpg', cv2.IMREAD_GRAYSCALE)
                 screenshot = np.array(pg.screenshot())
                 gray_screenshot = cv2.cvtColor(screenshot, cv2.COLOR_BGR2GRAY)
@@ -78,9 +87,14 @@ def nested_loop_Insta_fallow():
                     x += w // 2
                     y += h // 2
                     print("Fb Follow Button Found")
+                    
+                    
+                    # Random thời gian sleep
                     time_ranInt = random.randint(6, 9)
                     print(time_ranInt)
                     time.sleep(time_ranInt)
+                    
+                    
                     pg.click(x, y)
                     time.sleep(2)
                     pg.hotkey("alt", "tab")
@@ -95,7 +109,7 @@ def nested_loop_Insta_fallow():
                     result2 = cv2.matchTemplate(gray_screenshot2, template2, cv2.TM_CCOEFF_NORMED)
                     min_val2, max_val2, min_loc2, max_loc2 = cv2.minMaxLoc(result2)
                     
-                    ################## click vào logo
+                    #click vào logo
                     if max_val2 >= 0.8:
                         x, y = max_loc2
                         w, h = template2.shape[::-1] 
@@ -111,27 +125,29 @@ def nested_loop_Insta_fallow():
                         
                     time_ranInts = random.randint(1, 2) # 1 ==> 3
                     if time_ranInts == 1: 
-                        # Random
+                        # Random thời gian chạy nhiệm vụ khi đã click vào nut follow
                         random_time = random.uniform(15, 20)
                         start_time = datetime.datetime.now()
                         run_time = datetime.timedelta(seconds = random_time)
                         
                         while datetime.datetime.now() - start_time < run_time: 
-                            ######################### Kéo   
-                            time_ranInt = random.randint(5, 8)
+                            # random số lần kéo
+                            time_ranInt = random.randint(7, 10)
+                            # random kéo từ đâu tới đâu
                             time_ranReverse = random.randint(-300, -240)
                             for _ in range(time_ranInt):
                                 pg.scroll(time_ranReverse)
                                 time.sleep(1)
                                 time_ranReverse = random.randint(-250, -200)
                                 pg.scroll(time_ranReverse)
-                                time_ranInt = random.randint(2, 4)
-                                time.sleep(time_ranInt)
 
-
+                                # random 1 trong 2: trường hợp ra 1 thì sẽ 
+                                # like bài viết || trường hợp bằng 2 thì sẽ chuyển sang chức năng xem video ngắn
                                 time_ranInt = random.randint(1, 2) # 1 ==> 3
                                 if time_ranInt == 1: 
-                                    template3 = cv2.imread('igC.jpg', cv2.IMREAD_GRAYSCALE)
+                                    
+                                    # Kiếm cái nút comment rôi trừ tọa độ để có thể click vào được nút like 
+                                    template3 = cv2.imread('../imgO/igC.jpg', cv2.IMREAD_GRAYSCALE)
                                     screenshot3 = np.array(pg.screenshot())
                                     gray_screenshot3 = cv2.cvtColor(screenshot3, cv2.COLOR_BGR2GRAY)
                                     result3 = cv2.matchTemplate(gray_screenshot3, template3, cv2.TM_CCOEFF_NORMED)
@@ -148,19 +164,20 @@ def nested_loop_Insta_fallow():
                                         time_ranInt = random.randint(2, 3)
                                         time.sleep(time_ranInt)
                                         x -= 40
+                                        # click vào nút like
                                         pg.click(x, y)
+                                        
                                         # Kéo
-                                        time_ranInt = random.randint(5, 8)
+                                        time_ranInt = random.randint(7, 10)
                                         time_ranReverse = random.randint(-300, -240)
                                         for _ in range(time_ranInt):
                                             pg.scroll(time_ranReverse)
                                             time.sleep(1)
                                             time_ranReverse = random.randint(-250, -200)
                                             pg.scroll(time_ranReverse)
-                                            time_ranInt = random.randint(2, 4)
-                                            time.sleep(time_ranInt)
                                             break
                                     else: 
+                                        # trường hợp không có thì sẽ kéo
                                         # Kéo
                                         time_ranInt = random.randint(5, 8)
                                         time_ranReverse = random.randint(-300, -240)
@@ -173,7 +190,7 @@ def nested_loop_Insta_fallow():
                                             time.sleep(time_ranInt)
                                             break
                                 elif time_ranInt == 2:
-                                    #save
+                                    # save bài viết trong ig, trường hợp không tìm thấy nút save thì kéo
                                     time_ranInt = random.randint(2, 6)
                                     random_time3 = time_ranInt
                                     start_time3 = datetime.datetime.now()
@@ -195,15 +212,13 @@ def nested_loop_Insta_fallow():
                                             pg.click(x, y)
                                             time.sleep(1)
                                             # Kéo
-                                            time_ranInt = random.randint(5, 8)
+                                            time_ranInt = random.randint(7, 10)
                                             time_ranReverse = random.randint(-300, -240)
                                             for _ in range(time_ranInt):
                                                 pg.scroll(time_ranReverse)
                                                 time.sleep(1)
                                                 time_ranReverse = random.randint(-250, -200)
                                                 pg.scroll(time_ranReverse)
-                                                time_ranInt = random.randint(2, 4)
-                                                time.sleep(time_ranInt)
                                                 break
                                         else: 
                                             time_ranInt = random.randint(5, 8)
@@ -217,6 +232,7 @@ def nested_loop_Insta_fallow():
                                                 time.sleep(time_ranInt)
                                                 break 
                     elif time_ranInts == 2: 
+                        # tìm cái nút reel và click vào
                         template3 = cv2.imread('igReels.jpg', cv2.IMREAD_GRAYSCALE)
                         screenshot3 = np.array(pg.screenshot())
                         gray_screenshot3 = cv2.cvtColor(screenshot3, cv2.COLOR_BGR2GRAY)
@@ -244,6 +260,15 @@ def nested_loop_Insta_fallow():
                                 time_ranReverse = random.randint(-250, -200)
                                 pg.scroll(time_ranReverse)
                                 
+                                
+                                
+                                
+                            # đoạn này random nếu băng thì sẽ tim ngược lại thì sẽ kéo
+                                
+                                
+                                
+                                
+                                
                                 #thích  
                                 template3 = cv2.imread('igC.jpg', cv2.IMREAD_GRAYSCALE)
                                 screenshot3 = np.array(pg.screenshot())
@@ -263,7 +288,7 @@ def nested_loop_Insta_fallow():
                                     time.sleep(time_ranInt)
                                     y -= 60
                                     pg.click(x, y)
-                                    # Kéo
+                                    # tim xong sẽ kéo (giảm thời gian kéo khúc này lại)
                                     time_ranInt = random.randint(5, 8)
                                     time_ranReverse = random.randint(-300, -240)
                                     for _ in range(time_ranInt):
@@ -273,34 +298,38 @@ def nested_loop_Insta_fallow():
                                         pg.scroll(time_ranReverse)
                                         time_ranInt = random.randint(2, 4)
                                         time.sleep(time_ranInt)
-                                        break
+                                        break   
                             
-                            time_ranReverse = random.randint(-250, -200)
-                            pg.scroll(time_ranReverse)
-                            time_ranInt = random.randint(2, 4)
-                            time.sleep(time_ranInt)
                             
-                            #thích  
-                            time_ranInt = random.randint(2, 6)
-                            random_time3 = time_ranInt
-                            start_time3 = datetime.datetime.now()
-                            run_time3 = datetime.timedelta(seconds = random_time3)
-                            while datetime.datetime.now() - start_time3 < run_time3:
-                            # while True:
-                                template3 = cv2.imread('igL.jpg', cv2.IMREAD_GRAYSCALE) 
-                                screenshot3 = np.array(pg.screenshot())
-                                gray_screenshot3 = cv2.cvtColor(screenshot3, cv2.COLOR_BGR2GRAY)
-                                result3 = cv2.matchTemplate(gray_screenshot3, template3, cv2.TM_CCOEFF_NORMED)
-                                min_val3, max_val3, min_loc3, max_loc3 = cv2.minMaxLoc(result3)
-                                if max_val3 >= 0.8:
-                                    x, y = max_loc3
-                                    w, h = template3.shape[::-1] 
-                                    x += w // 2
-                                    y += h // 2
-                                    print("ig like Button Found")
-                                    time.sleep(2)
-                                    pg.click(x, y)
-                                    time.sleep(1)
+                            
+                            # thêm thằng kéo khúc này 
+                            
+                            
+                            # time_ranReverse = random.randint(-250, -200)
+                            # pg.scroll(time_ranReverse)
+                            # time_ranInt = random.randint(2, 4)
+                            # time.sleep(time_ranInt)
+                            # #thích  
+                            # time_ranInt = random.randint(2, 6)
+                            # random_time3 = time_ranInt
+                            # start_time3 = datetime.datetime.now()
+                            # run_time3 = datetime.timedelta(seconds = random_time3)
+                            # while datetime.datetime.now() - start_time3 < run_time3:
+                            # # while True:
+                            #     template3 = cv2.imread('igL.jpg', cv2.IMREAD_GRAYSCALE) 
+                            #     screenshot3 = np.array(pg.screenshot())
+                            #     gray_screenshot3 = cv2.cvtColor(screenshot3, cv2.COLOR_BGR2GRAY)
+                            #     result3 = cv2.matchTemplate(gray_screenshot3, template3, cv2.TM_CCOEFF_NORMED)
+                            #     min_val3, max_val3, min_loc3, max_loc3 = cv2.minMaxLoc(result3)
+                            #     if max_val3 >= 0.8:
+                            #         x, y = max_loc3
+                            #         w, h = template3.shape[::-1] 
+                            #         x += w // 2
+                            #         y += h // 2
+                            #         print("ig like Button Found")
+                            #         time.sleep(2)
+                            #         pg.click(x, y)
+                            #         time.sleep(1)
 
                     
                     pg.moveTo(1090, 500)
