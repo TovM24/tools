@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ProjectModuleManager">
@@ -5,4 +6,13 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/tool_Like4like.iml" filepath="$PROJECT_DIR$/.idea/tool_Like4like.iml" />
     </modules>
   </component>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/tool_Like4like.iml" filepath="$PROJECT_DIR$/.idea/tool_Like4like.iml" />
+    </modules>
+  </component>
+>>>>>>> 2d502d4cc82684f7030f69a9574e4dd724555b3e
 </project>

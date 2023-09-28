@@ -4,5 +4,9 @@ opencv-python
 numpy
 opencv-python
 Pillow
+<<<<<<< HEAD
 pyperclip
 psutil
+=======
+pyperclip
+>>>>>>> 2d502d4cc82684f7030f69a9574e4dd724555b3e

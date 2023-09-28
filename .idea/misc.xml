@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 (tool_Like4like)" project-jdk-type="Python SDK" />
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 (tool_Like4like)" project-jdk-type="Python SDK" />
+>>>>>>> 2d502d4cc82684f7030f69a9574e4dd724555b3e
 </project>
